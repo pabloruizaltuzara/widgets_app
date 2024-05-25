@@ -49,7 +49,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
           endReached = true;
         });
       }
-      print('$pageViewController.page');
+      //print('$pageViewController.page');
     });
   }
 

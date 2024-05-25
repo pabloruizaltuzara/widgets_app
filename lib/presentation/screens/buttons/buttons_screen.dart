@@ -11,7 +11,7 @@ class ButtonsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Buttons screen'),
       ),
-      body: _ButtonsView(),
+      body: const _ButtonsView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           context.pop();
@@ -96,8 +96,8 @@ class Custombutton extends StatelessWidget {
         color: colors.primary,
         child: InkWell(
           onTap: (){},
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text('Hola mundo',
               style: TextStyle(
                 color: Colors.white
