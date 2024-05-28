@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/presentation/providers/theme_provider.dart';
 
-import 'config/theme/app_theme.dart';
 
 void main() => runApp(const ProviderScope(child: MyApp()));
 
@@ -12,12 +11,14 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final selectedColor = ref.watch(selectedColorProvider);
-    final isDarkMode = ref.watch(isDarkModeProvider);
+    //final selectedColor = ref.watch(selectedColorProvider);
+    //final isDarkMode = ref.watch(isDarkModeProvider);
+
+    final appTheme = ref.watch(themeNotifierProvider);
     return MaterialApp.router(
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: selectedColor, isDarkMode: isDarkMode).getTheme(),
+      theme: appTheme.getTheme(),
       title: 'Flutter widgets',
     );
   }
